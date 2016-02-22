@@ -1,7 +1,13 @@
 #!/usr/bin/env ruby
 
 args = ARGV
-puts "You ran Hyde with these arguments: #{args}"
+# puts "You ran Hyde with these arguments: #{args}"
+
+
+
+#create skeleton
+
+
 
 # ##############
 # Your code here
