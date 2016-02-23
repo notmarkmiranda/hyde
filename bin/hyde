@@ -1,13 +1,13 @@
-require './bin/structure'
 #!/usr/bin/env ruby
+require './bin/structure'
+
 
 args = ARGV
-
-Structure.new()
-# puts "You ran Hyde with these arguments: #{args}"
-# Dir.home + ARGV[1]
-
-
+case args[0]
+when "new"
+Structure.new(args[1])
+when "build"
+end
 #create skeleton
 
 
