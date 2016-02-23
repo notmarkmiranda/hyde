@@ -6,7 +6,6 @@ require 'pry'
 class OutputStructureTest < Minitest::Test
 
   def test_it_creates_inner_folder_structure_in_output_folder
-    skip
     folder = Structure.new('/Hyde_output')
     folder_two = OutputStructure.new('/Hyde_output')
     assert File.directory?(Dir.home + '/Hyde_output/_output')
@@ -16,13 +15,9 @@ class OutputStructureTest < Minitest::Test
   end
 
   def test_it_copies_files_to_output_folder
-    folder = Structure.new('/Hyde_output')
-    folder_two = OutputStructure.new('/Hyde_output')
-    # date = Date.today.strftime("%Y-%m-%d")
-    assert File.file?(Dir.home + '/Hyde_output/_output/css/main.css')
-    # assert File.file?(Dir.home + '/Hyde_output/_output/pages/about.md')
-    # assert File.file?(Dir.home + '/Hyde_output/_output/index.md')
-    # assert File.file?(Dir.home + '/Hyde_output/_output/posts/' + date + '-welcome-to-hyde.md')
+    folder = Structure.new('/HydeTest')
+    folder_two = OutputStructure.new('/HydeTest')
+    assert File.file?(Dir.home + '/HydeTest/_output/css/main.css')
   end
 
 end

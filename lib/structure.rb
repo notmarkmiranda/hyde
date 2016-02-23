@@ -19,7 +19,6 @@ class Structure
   end
 
   def create_inner_structure
-    FileUtils::mkdir_p @home + '/_output'
     FileUtils::mkdir_p @home + '/source/css'
     FileUtils::mkdir_p @home + '/source/pages'
     FileUtils::mkdir_p @home + '/source/posts'
