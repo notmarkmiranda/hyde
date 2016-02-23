@@ -1,3 +1,4 @@
+require 'date'
 require 'pry'
 require 'FileUtils'
 
@@ -24,10 +25,11 @@ class Structure
 
   def create_writeable_files
     placeholder_text = "This is placeholder text."
+    date = Date.today.strftime("%Y-%m-%d")
     File.write(@home + '/source/css/main.css', placeholder_text)
     File.write(@home + '/source/pages/about.md', placeholder_text)
     File.write(@home + '/source/index.md', placeholder_text)
-    File.write(@home + '/source/posts/welcome-to-hyde.md', placeholder_text)
+    File.write(@home + '/source/posts/' + date + '-welcome-to-hyde.md', placeholder_text)
   end
 
 end

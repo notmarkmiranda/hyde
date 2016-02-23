@@ -1,4 +1,4 @@
-require './bin/structure'
+require './lib/structure'
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
@@ -20,10 +20,11 @@ class StructureTest < Minitest::Test
 
   def test_it_creates_writeable_files
     folder = Structure.new('/Hydetest')
+    date = Date.today.strftime("%Y-%m-%d")
     assert File.file?(Dir.home + '/Hydetest/source/css/main.css')
     assert File.file?(Dir.home + '/Hydetest/source/pages/about.md')
     assert File.file?(Dir.home + '/Hydetest/source/index.md')
-    assert File.file?(Dir.home + '/Hydetest/source/posts/welcome-to-hyde.md')
+    assert File.file?(Dir.home + '/Hydetest/source/posts/' + date + '-welcome-to-hyde.md')
   end
 
 end
