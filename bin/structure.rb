@@ -8,7 +8,7 @@ class Structure
   end
 
   def create_outer_structure(path)
-    home = Dir.home + '/' + path
+    home = Dir.home + path
     FileUtils::mkdir_p home
   end
 
