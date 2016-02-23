@@ -1,6 +1,9 @@
-#!/usr/bin/env ruby
+!/usr/bin/env ruby
+require_relative 'structure'
 
 args = ARGV
+
+new_structure = Structure.new(ARGV[1])
 # puts "You ran Hyde with these arguments: #{args}"
 
 
