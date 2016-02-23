@@ -5,8 +5,8 @@ require 'minitest/pride'
 class StructureTest < Minitest::Test
 
   def test_it_creates_folders
-    folder = Structure.new('~/HydeTest')
-    assert File.directory?('~/HydeTest')
+    folder = Structure.new('HydeTest')
+    assert File.directory?(Dir.home+ '/Hydetest')
   end
 
 end
