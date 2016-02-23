@@ -1,12 +1,29 @@
 require './bin/structure'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 
 class StructureTest < Minitest::Test
 
-  def test_it_creates_folders
-    folder = Structure.new('~/HydeTest')
-    assert File.directory?('~/HydeTest')
+  def test_it_creates_outer_folders
+    folder = Structure.new('/HydeTest')
+    assert File.directory?(Dir.home + '/Hydetest')
+  end
+
+  def test_it_creates_inner_folder_structure
+    folder = Structure.new('/Hydetest')
+    assert File.directory?(Dir.home + '/Hydetest/_output')
+    assert File.directory?(Dir.home + '/Hydetest/source/css')
+    assert File.directory?(Dir.home + '/Hydetest/source/pages')
+    assert File.directory?(Dir.home + '/Hydetest/source/posts')
+  end
+
+  def test_it_creates_writeable_files
+    folder = Structure.new('/Hydetest')
+    assert File.file?(Dir.home + '/Hydetest/source/css/main.css')
+    assert File.file?(Dir.home + '/Hydetest/source/pages/about.md')
+    assert File.file?(Dir.home + '/Hydetest/source/index.md')
+    assert File.file?(Dir.home + '/Hydetest/source/posts/welcome-to-hyde.md')
   end
 
 end
