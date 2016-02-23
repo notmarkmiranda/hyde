@@ -5,7 +5,7 @@ require './bin/structure'
 args = ARGV
 case args[0]
 when "new"
-Structure.new(args[1])
+  Structure.new(args[1])
 when "build"
 end
 #create skeleton
