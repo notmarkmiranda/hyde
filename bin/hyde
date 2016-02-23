@@ -6,6 +6,7 @@ case args[0]
 when "new"
   Structure.new(args[1])
 when "build"
+  puts "Path does not exist" if !File.directory?(Dir.home + args[1])
 end
 #create skeleton
 

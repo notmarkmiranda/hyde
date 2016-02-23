@@ -12,11 +12,8 @@ class Structure
   end
 
   def create_outer_structure(path)
-    # if path[0] == "~"
-    #   path = path[1..-1]
-    # end
     path = "/#{path}" if path[0] != "/"
-    @home = Dir.home + path
+    path.split("/")[1] == "Users" ? @home = path : @home = Dir.home + path
     FileUtils::mkdir_p @home
   end
 
