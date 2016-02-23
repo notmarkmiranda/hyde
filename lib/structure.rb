@@ -14,12 +14,11 @@ class Structure
   def create_outer_structure(path)
     path = "/#{path}" if path[0] != "/"
     path.split("/")[1] == "Users" ? @home = path : @home = Dir.home + path
-    raise ArgumentError.new("THE FILEPATH ALREADY EXISTS") if File.directory?(@home)
+    # raise ArgumentError.new("THE FILEPATH ALREADY EXISTS") if File.directory?(@home)
     FileUtils::mkdir_p @home
   end
 
   def create_inner_structure
-    FileUtils::mkdir_p @home + '/_output'
     FileUtils::mkdir_p @home + '/source/css'
     FileUtils::mkdir_p @home + '/source/pages'
     FileUtils::mkdir_p @home + '/source/posts'

@@ -12,7 +12,6 @@ class StructureTest < Minitest::Test
 
   def test_it_creates_inner_folder_structure
     folder = Structure.new('/Hydetest')
-    assert File.directory?(Dir.home + '/Hydetest/_output')
     assert File.directory?(Dir.home + '/Hydetest/source/css')
     assert File.directory?(Dir.home + '/Hydetest/source/pages')
     assert File.directory?(Dir.home + '/Hydetest/source/posts')
