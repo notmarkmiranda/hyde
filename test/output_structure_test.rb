@@ -5,13 +5,9 @@ require 'pry'
 
 class OutputStructureTest < Minitest::Test
 
-  def test_it_creates_outer_folders
-    folder = Structure.new('/Hyde_output')
-    assert File.directory?(Dir.home + '/Hyde_output')
-  end
-
   def test_it_creates_inner_folder_structure_in_output_folder
     folder = Structure.new('/Hyde_output')
+    folder.create_inner_output_structure
     assert File.directory?(Dir.home + '/Hyde_output/_output')
     assert File.directory?(Dir.home + '/Hyde_output/_output/css')
     assert File.directory?(Dir.home + '/Hyde_output/_output/pages')
