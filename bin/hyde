@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
-require './bin/structure'
-
+require './lib/structure'
 
 args = ARGV
 case args[0]

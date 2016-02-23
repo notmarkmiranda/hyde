@@ -1,6 +1,6 @@
 require 'date'
+require 'fileutils'
 require 'pry'
-require 'FileUtils'
 
 class Structure
   attr_accessor :path
@@ -12,6 +12,10 @@ class Structure
   end
 
   def create_outer_structure(path)
+    # if path[0] == "~"
+    #   path = path[1..-1]
+    # end
+    path = "/#{path}" if path[0] != "/"
     @home = Dir.home + path
     FileUtils::mkdir_p @home
   end
