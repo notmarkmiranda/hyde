@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<title>My Blog</title>
+</head>
+
+<body>
+<%=  @html_content %>
+</body>
+
+</html>
