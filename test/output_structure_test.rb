@@ -12,12 +12,14 @@ class OutputStructureTest < Minitest::Test
     assert File.directory?(Dir.home + '/Hyde_output/_output/css')
     assert File.directory?(Dir.home + '/Hyde_output/_output/pages')
     assert File.directory?(Dir.home + '/Hyde_output/_output/posts')
+    FileUtils.rm_rf(Dir.home + '/Hyde_output')
   end
 
   def test_it_copies_files_to_output_folder
     folder = Structure.new('/HydeTest')
     folder_two = OutputStructure.new('/HydeTest')
     assert File.file?(Dir.home + '/HydeTest/_output/css/main.css')
+    FileUtils.rm_rf(Dir.home + '/Hydetest')
   end
 
 end
