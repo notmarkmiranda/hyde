@@ -14,7 +14,7 @@ class Structure
   def create_outer_structure(path)
     path = "/#{path}" if path[0] != "/"
     path.split("/")[1] == "Users" ? @home = path : @home = Dir.home + path
-    # raise ArgumentError.new("THE FILEPATH ALREADY EXISTS") if File.directory?(@home)
+    raise ArgumentError.new("THE FILEPATH ALREADY EXISTS") if File.directory?(@home)
     FileUtils::mkdir_p @home
   end
 
@@ -26,11 +26,12 @@ class Structure
 
   def create_writeable_files
     placeholder_text = "This is placeholder text."
+    placeholder_markdown = "# Some Markdown\n\n* a list\n* another item"
     date = Date.today.strftime("%Y-%m-%d")
     File.write(@home + '/source/css/main.css', placeholder_text)
-    File.write(@home + '/source/pages/about.md', placeholder_text)
-    File.write(@home + '/source/index.md', placeholder_text)
-    File.write(@home + '/source/posts/' + date + '-welcome-to-hyde.md', placeholder_text)
+    File.write(@home + '/source/pages/about.md', placeholder_markdown)
+    File.write(@home + '/source/index.md', placeholder_markdown)
+    File.write(@home + '/source/posts/' + date + '-welcome-to-hyde.md', placeholder_markdown)
   end
 
 end
