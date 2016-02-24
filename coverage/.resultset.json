@@ -1,0 +1,46 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/Users/notmarkmiranda/turing/1module/projects/hyde/lib/structure.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        3,
+        3,
+        3,
+        null,
+        null,
+        1,
+        3,
+        3,
+        3,
+        3,
+        null,
+        null,
+        1,
+        3,
+        3,
+        3,
+        null,
+        null,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1456337887
+  }
+}

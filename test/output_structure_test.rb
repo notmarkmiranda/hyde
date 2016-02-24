@@ -1,7 +1,5 @@
+require './test/test_helper'
 require './lib/output_structure'
-require 'minitest/autorun'
-require 'minitest/pride'
-require 'pry'
 
 class OutputStructureTest < Minitest::Test
 
