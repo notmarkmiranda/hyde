@@ -2,6 +2,7 @@ require './lib/structure'
 require 'fileutils'
 require 'kramdown'
 require 'date'
+require 'erb'
 
 class OutputStructure
   attr_accessor :path
@@ -44,8 +45,9 @@ class OutputStructure
       posts_html = Kramdown::Document.new(posts_md).to_html
       File.write(@home + '/_output/posts/' + file, posts_html)
       File.rename(@home + '/_output/posts/' + file, @home + '/_output/posts/' + file.split(".")[0] +'.html')
+
     end
     # REFACTOR THESE TWO INTO ONE METHOD
-    
+
   end
 end

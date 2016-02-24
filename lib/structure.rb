@@ -21,6 +21,7 @@ class Structure
   def create_inner_structure
     FileUtils::mkdir_p @home + '/source/css'
     FileUtils::mkdir_p @home + '/source/pages'
+    FileUtils::mkdir_p @home + '/source/layouts'
     FileUtils::mkdir_p @home + '/source/posts'
   end
 
@@ -30,6 +31,7 @@ class Structure
     date = Date.today.strftime("%Y-%m-%d")
     File.write(@home + '/source/css/main.css', placeholder_text)
     File.write(@home + '/source/pages/about.md', placeholder_markdown)
+    File.write(@home + '/source/layouts/default.html.erb', placeholder_markdown)
     File.write(@home + '/source/index.md', placeholder_markdown)
     File.write(@home + '/source/posts/' + date + '-welcome-to-hyde.md', placeholder_markdown)
   end
