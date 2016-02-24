@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require './lib/structure'
 require './lib/output_structure'
+require './lib/blog_post'
 
 args = ARGV
 case args[0]
@@ -11,7 +12,7 @@ when "build"
   OutputStructure.new(args[1])
 when "post"
   raise ArgumentError.new("PATH DOES NOT EXIST!") if File.directory?(args[1])
-  BlogPost.new(args[1], args[2..-1])  
+  BlogPost.new(args[1], args[2..-1])
 end
 #create skeleton
 
