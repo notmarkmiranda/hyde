@@ -29,4 +29,21 @@ class OutputStructureTest < Minitest::Test
     FileUtils.rm_rf(Dir.home + '/Hydetest')
   end
 
+  def test_it_can_convert_pages_html_files
+    folder = Structure.new('/HydeTest')
+    folder_two = OutputStructure.new('/HydeTest')
+    assert File.file?(Dir.home + '/HydeTest/_output/pages/about.html')
+    FileUtils.rm_rf(Dir.home + '/Hydetest')
+  end
+
+  def test_it_can_convert_pages_html_files
+    folder = Structure.new('/HydeTest')
+    folder_two = OutputStructure.new('/HydeTest')
+    date = Date.today.strftime("%Y-%m-%d")
+    assert File.file?(Dir.home + '/Hydetest/_output/posts/' + date + '-welcome-to-hyde.html')
+    FileUtils.rm_rf(Dir.home + '/Hydetest')
+  end
+
+
+
 end
