@@ -22,4 +22,11 @@ class OutputStructureTest < Minitest::Test
     FileUtils.rm_rf(Dir.home + '/Hydetest')
   end
 
+  def test_it_can_convert_html_files
+    folder = Structure.new('/HydeTest')
+    folder_two = OutputStructure.new('/HydeTest')
+    assert File.file?(Dir.home + '/HydeTest/_output/index.html')
+    FileUtils.rm_rf(Dir.home + '/Hydetest')
+  end
+
 end
