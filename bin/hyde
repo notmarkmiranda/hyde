@@ -1,12 +1,14 @@
 #!/usr/bin/env ruby
 require './lib/structure'
+require './lib/output_structure'
 
 args = ARGV
 case args[0]
 when "new"
   Structure.new(args[1])
 when "build"
-  raise ArgumentError.new("Path does not exist") if !File.directory?(Dir.home + args[1])
+  raise ArgumentError.new("PATH DOES NOT EXIST!") if File.directory?(args[1])
+  OutputStructure.new(args[1])
 end
 #create skeleton
 

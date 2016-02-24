@@ -13,8 +13,8 @@ class Structure
 
   def create_outer_structure(path)
     path = "/#{path}" if path[0] != "/"
-    path.split("/")[1] == "Users" ? @home = path : @home = Dir.home + path
-    raise ArgumentError.new("THE FILEPATH ALREADY EXISTS") if File.directory?(@home)
+    path.split("/")[1] == "Users" ? @home = path : @home = __dir__ + path
+    raise ArgumentError.new("THE FILEPATH ALREADY EXISTS!") if File.directory?(@home)
     FileUtils::mkdir_p @home
   end
 
