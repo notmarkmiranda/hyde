@@ -39,7 +39,7 @@ class OutputStructureTest < Minitest::Test
     folder_two = OutputStructure.new('/HydeTestFive')
     date = Date.today.strftime("%Y-%m-%d")
     assert File.file?('./lib/HydeTestFive/_output/posts/' + date + '-welcome-to-hyde.html')
-    FileUtils.rm_rf('./lib/HydeTestFive')
+    # FileUtils.rm_rf('./lib/HydeTestFive')
   end
 
 

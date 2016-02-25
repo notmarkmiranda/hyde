@@ -16,9 +16,8 @@ when "post"
   raise ArgumentError.new("PATH DOES NOT EXIST!") if File.directory?(path)
   BlogPost.new(path, args[2..-1])
 when "run"
-  raise ArgumentError.new("PATH DOES NOT EXIST!") if File.directory?(path)
-
-  `open http://localhost:5000`
+  # raise ArgumentError.new("PATH DOES NOT EXIST!") if File.directory?(path)
+  `open http://localhost:5000` 
   `ruby -run -e httpd ./lib/blog/_output -p 5000`
 else
   puts "invalid command"
