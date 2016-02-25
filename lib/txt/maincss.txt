@@ -1,7 +1,6 @@
 body {
   background: #C7C7C7;
-  font-family: 'Helvetica Neue, Helvetica';
-
+  font-family: 'Helvetica Neue', 'Helvetica';
   }
 
 h1 {
@@ -14,10 +13,10 @@ h2 {
 }
 
 li {
-
+  color: blue;
 }
 
 p {
   font-size: 16px;
-  font-color: #383838;
+  color: #383838;
   }

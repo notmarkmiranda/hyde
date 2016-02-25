@@ -5,8 +5,8 @@ class OutputStructure
   attr_accessor :path
 
   def initialize(path)
-    path = "/#{path}" if path[0] != "/"
-    path.split("/")[1] == "Users" ? @home = path : @home = __dir__ + path
+    @home  = ErrorCheck.path_check(path)
+    raise ArgumentError.new("PATH DOES NOT EXIST!") if !File.directory?(@home)
     copy_files
     convert_md
   end
