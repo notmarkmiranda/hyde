@@ -21,7 +21,7 @@ class OutputStructure
 
   def file_conversion_magic
     @folders = Dir.glob("#{@home}/source/**/*").select do |file|
-      file if file.include?("md") || file.include?("markdown") || !file.include?("source")
+      file if file.include?("md" || "markdown") || !file.include?("source")
     end
     convert_html
   end

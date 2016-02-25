@@ -23,10 +23,11 @@ class Structure
 
   def create_writeable_files
     date = Date.today.strftime("%Y-%m-%d")
-    File.write(@home + '/source/css/main.css', File.read('./lib/txt/maincss.txt'))
-    File.write(@home + '/source/pages/about.md', File.read('./lib/txt/about.txt'))
-    File.write(@home + '/source/layouts/default.html.erb', File.read('./lib/txt/erb.txt'))
-    File.write(@home + '/source/index.md', File.read('./lib/txt/index.txt'))
-    File.write(@home + '/source/posts/' + date + '-welcome-to-hyde.md', File.read('./lib/txt/welcome.txt'))
+    source = "#{@home}/source/"
+    File.write("#{source}css/main.css", File.read('./lib/txt/maincss.txt'))
+    File.write("#{source}pages/about.md", File.read('./lib/txt/about.txt'))
+    File.write("#{source}layouts/default.html.erb", File.read('./lib/txt/erb.txt'))
+    File.write("#{source}index.md", File.read('./lib/txt/index.txt'))
+    File.write("#{source}posts/#{date}-welcome-to-hyde.md", File.read('./lib/txt/welcome.txt'))
   end
 end
