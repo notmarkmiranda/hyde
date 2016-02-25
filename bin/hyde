@@ -1,31 +1,22 @@
 #!/usr/bin/env ruby
-require './lib/structure'
-require './lib/output_structure'
 require './lib/blog_post'
 require './lib/watch_changes'
-require 'listen'
-require 'pry'
 
 args = ARGV
 path = args[1]
-
 
 case args[0]
 when "new"
   Structure.new(path)
 when "build"
-  # raise ArgumentError.new("PATH DOES NOT EXIST!") if File.directory?(path)
   OutputStructure.new(path)
 when "post"
-  # raise ArgumentError.new("PATH DOES NOT EXIST!") if File.directory?(path)
   BlogPost.new(path, args[2..-1])
 when "run"
-  # raise ArgumentError.new("PATH DOES NOT EXIST!") if File.directory?(path)
   `open http://localhost:5000`
   `ruby -run -e httpd ./lib/blog/_output -p 5000`
 when "watchfs"
-  # raise ArgumentError.new("PATH DOES NOT EXIST!") if File.directory?(path)
   WatchChanges.watch_changes(path)
 else
-  puts "invalid command"
+  puts "INVALID COMMAND"
 end
