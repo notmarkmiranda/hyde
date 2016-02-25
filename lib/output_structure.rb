@@ -1,9 +1,6 @@
 require './lib/structure'
-require 'fileutils'
-require 'kramdown'
-require 'date'
-require 'erb'
-require 'pry'
+require './lib/lib_header'
+
 
 class OutputStructure
   attr_accessor :path
@@ -20,40 +17,34 @@ class OutputStructure
   end
 
   def convert_md
-    index_md = File.read(@home + '/_output/index.md')
-    html_content = Kramdown::Document.new(index_md).to_html
-    erb_template = File.read(@home + '/source/layouts/default.html.erb')
-    erb_formatted = ERB.new(erb_template).result(binding)
-
-    File.write(@home + '/_output/index.md', erb_formatted)
-    File.rename(@home + '/_output/index.md', @home + '/_output/index.html')
-
-    # REFACTOR THESE TWO INTO ONE METHOD
-    md_pages = Dir.entries(@home + '/_output/pages').find_all do |filename|
-      filename.split(".")[-1] == "md"  || filename.split(".")[-1] == "markdown"
-    end
-    md_pages.each do |file|
-      pages_md = File.read(@home + '/_output/pages/' + file)
-      html_content = Kramdown::Document.new(pages_md).to_html
-      erb_template = File.read(@home + '/source/layouts/default.html.erb')
-      erb_formatted = ERB.new(erb_template).result(binding)
-      File.write(@home + '/_output/pages/' + file, erb_formatted)
-      File.rename(@home + '/_output/pages/' + file, @home + '/_output/pages/' + file.split(".")[0] +'.html')
-    end
-
-    md_posts = Dir.entries(@home + '/_output/posts').find_all do |filename|
-      filename.split(".")[-1] == "md"  || filename.split(".")[-1] == "markdown"
-    end
-    md_posts.each do |file|
-      posts_md = File.read(@home + '/_output/posts/' + file)
-      html_content = Kramdown::Document.new(posts_md).to_html
-      erb_template = File.read(@home + '/source/layouts/default.html.erb')
-      erb_formatted = ERB.new(erb_template).result(binding)
-      File.write(@home + '/_output/posts/' + file, erb_formatted)
-      File.rename(@home + '/_output/posts/' + file, @home + '/_output/posts/' + file.split(".")[0] +'.html')
-
-    end
-    # REFACTOR THESE TWO INTO ONE METHOD
-
+    file_conversion_magic
   end
+
+  def file_conversion_magic
+    folders = ["pages", "posts", "."]
+    folders.each do |folder|
+      get_md_file_names(folder)
+      @md_pages.each do |file|
+        convert_html(file, folder)
+      end
+    end
+  end
+
+  def get_md_file_names(folder)
+    @md_pages = Dir.entries("#{@home}/_output/#{folder}").find_all do |filename|
+      filename.split(".")[-1] == "md"  || filename.split(".")[-1] == "markdown"
+    end
+  end
+
+  def convert_html(file, folder)
+    pages_md = File.read("#{@home}/_output/#{folder}/#{file}")
+    html_content = Kramdown::Document.new(pages_md, :auto_ids => false).to_html
+    erb_template = File.read("#{@home}/source/layouts/default.html.erb")
+    erb_formatted = ERB.new(erb_template).result(binding)
+    File.write("#{@home}/_output/#{folder}/#{file}", erb_formatted)
+    File.rename("#{@home}/_output/#{folder}/#{file}", "#{@home}/_output/#{folder}/#{file.split(".")[0]}.html")
+  end
+
+
+
 end

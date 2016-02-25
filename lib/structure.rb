@@ -1,5 +1,4 @@
-require 'date'
-require 'fileutils'
+require './lib/lib_header'
 require 'pry'
 
 class Structure
@@ -26,16 +25,12 @@ class Structure
   end
 
   def create_writeable_files
-    placeholder_text = "This is placeholder text."
-    placeholder_markdown = "# Some Markdown\n\n* a list\n* another item"
     date = Date.today.strftime("%Y-%m-%d")
-    erb_file = File.read('./lib/erb.txt')
-    css_file = File.read('./lib/maincss.txt')
-    File.write(@home + '/source/css/main.css', css_file)
-    File.write(@home + '/source/pages/about.md', placeholder_markdown)
-    File.write(@home + '/source/layouts/default.html.erb', erb_file)
-    File.write(@home + '/source/index.md', placeholder_markdown)
-    File.write(@home + '/source/posts/' + date + '-welcome-to-hyde.md', placeholder_markdown)
+    File.write(@home + '/source/css/main.css', File.read('./lib/txt/maincss.txt'))
+    File.write(@home + '/source/pages/about.md', File.read('./lib/txt/about.txt'))
+    File.write(@home + '/source/layouts/default.html.erb', File.read('./lib/txt/erb.txt'))
+    File.write(@home + '/source/index.md', File.read('./lib/txt/index.txt'))
+    File.write(@home + '/source/posts/' + date + '-welcome-to-hyde.md', File.read('./lib/txt/welcome.txt'))
   end
 
 end
