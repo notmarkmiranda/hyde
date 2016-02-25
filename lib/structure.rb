@@ -1,8 +1,6 @@
 require './lib/lib_header'
-require 'pry'
 
 class Structure
-  attr_accessor :path
 
   def initialize(path)
     create_outer_structure(path)
@@ -11,9 +9,8 @@ class Structure
   end
 
   def create_outer_structure(path)
-    path = "/#{path}" if path[0] != "/"
-    path.split("/")[1] == "Users" ? @home = path : @home = __dir__ + path
-    raise ArgumentError.new("THE FILEPATH ALREADY EXISTS!") if File.directory?(@home)
+    @home = ErrorCheck.new_path_check(path)
+    raise ArgumentError.new("PATH ALREADY EXISTS!") if File.directory?(@home)
     FileUtils::mkdir_p @home
   end
 

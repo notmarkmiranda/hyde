@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-25T08:10:37-07:00">2016-02-25T08:10:37-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-25T13:29:34-07:00">2016-02-25T13:29:34-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         6.21
+         1.54
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>3</b> files in total.
-    <b>58</b> relevant lines. 
-    <span class="green"><b>58</b> lines covered</span> and
+    <b>4</b> files in total.
+    <b>44</b> relevant lines. 
+    <span class="green"><b>44</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -51,33 +51,43 @@
     <tbody>
       
       <tr>
+        <td class="strong"><a href="#ba6144b6bc6723bff3252cba071908d379757f22" class="src_link" title="lib/blog_post.rb">lib/blog_post.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>12</td>
+        <td>7</td>
+        <td>7</td>
+        <td>0</td>
+        <td>1.6</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#b4fbab189c2cdfeade611f776047cb43ffb54639" class="src_link" title="lib/error_check.rb">lib/error_check.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>16</td>
+        <td>10</td>
+        <td>10</td>
+        <td>0</td>
+        <td>1.4</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#7d55a76f721ec08e94e1eaec922363d8cefad657" class="src_link" title="lib/lib_header.rb">lib/lib_header.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
+        <td>5</td>
+        <td>5</td>
+        <td>5</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
       
       <tr>
-        <td class="strong"><a href="#a67f37388234d522cf4634d16f937893b50fb991" class="src_link" title="lib/output_structure.rb">lib/output_structure.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>55</td>
-        <td>29</td>
-        <td>29</td>
-        <td>0</td>
-        <td>9.1</td>
-      </tr>
-      
-      <tr>
         <td class="strong"><a href="#c4a1fa3ba0754c569d0f00507c9c790638b426b3" class="src_link" title="lib/structure.rb">lib/structure.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>36</td>
-        <td>25</td>
-        <td>25</td>
+        <td>33</td>
+        <td>22</td>
+        <td>22</td>
         <td>0</td>
-        <td>3.7</td>
+        <td>1.7</td>
       </tr>
       
     </tbody>
@@ -96,13 +106,217 @@
     
       <div class="source_files">
       
+        <div class="source_table" id="ba6144b6bc6723bff3252cba071908d379757f22">
+  <div class="header">
+    <h3>lib/blog_post.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;date&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class BlogPost</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize(path, file_name)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @home  = ErrorCheck.path_check(path)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">    # path = &quot;/#{path}&quot; if path[0] != &quot;/&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">    # path.split(&quot;/&quot;)[1] == &quot;Users&quot; ? @home = path : @home = __dir__ + path</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    file_extension = file_name.join(&quot;-&quot;).downcase</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    date = Date.today.strftime(&quot;%Y-%m-%d&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    File.write(@home + &#39;/source/posts/&#39; + date + &#39;-&#39; + file_extension + &#39;.md&#39;, &quot;# #{file_name.join(&quot; &quot;)}\n\nYour content here&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="b4fbab189c2cdfeade611f776047cb43ffb54639">
+  <div class="header">
+    <h3>lib/error_check.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>10</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;listen&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;./lib/lib_header&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ErrorCheck</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :home</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.path_check(path)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    path = &quot;/#{path}&quot; if path[0] != &quot;/&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    path.split(&quot;/&quot;)[1] == &quot;Users&quot; ? @home = path : @home = __dir__ + path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.new_path_check(path)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    path = &quot;/#{path}&quot; if path[0] != &quot;/&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="13">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    path.split(&quot;/&quot;)[1] == &quot;Users&quot; ? @home = path : @home = __dir__ + path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="7d55a76f721ec08e94e1eaec922363d8cefad657">
   <div class="header">
     <h3>lib/lib_header.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>4</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -134,352 +348,10 @@
           <code class="ruby">require &#39;erb&#39;</code>
         </li>
       
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="a67f37388234d522cf4634d16f937893b50fb991">
-  <div class="header">
-    <h3>lib/output_structure.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>29</b> relevant lines. 
-      <span class="green"><b>29</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;./lib/structure&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;./lib/lib_header&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class OutputStructure</code>
-        </li>
-      
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  attr_accessor :path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def initialize(path)</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="8">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    path = &quot;/#{path}&quot; if path[0] != &quot;/&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="9">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    path.split(&quot;/&quot;)[1] == &quot;Users&quot; ? @home = path : @home = __dir__ + path</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="10">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    copy_files</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="11">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    convert_md</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def copy_files</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="15">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    FileUtils.cp_r(@home + &#39;/source/.&#39;, @home + &#39;/_output/&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def convert_md</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">    # index_md = File.read(@home + &#39;/_output/index.md&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">    # html_content = Kramdown::Document.new(index_md, :auto_ids =&gt; false).to_html</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">    # erb_template = File.read(@home + &#39;/source/layouts/default.html.erb&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">    # erb_formatted = ERB.new(erb_template).result(binding)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">    # File.write(&quot;#{@home}/_output/index.md&quot;, erb_formatted)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">    # File.rename(&quot;#{@home}/_output/index.md&quot;, &quot;#{@home}/_output/index.html&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="25">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    file_conversion_magic</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def file_conversion_magic</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="29">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    folders = [&quot;pages&quot;, &quot;posts&quot;, &quot;.&quot;]</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="30">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    folders.each do |folder|</code>
-        </li>
-      
-        <li class="covered" data-hits="15" data-linenumber="31">
-          <span class="hits">15</span>
-          
-          <code class="ruby">      get_md_file_names(folder)</code>
-        </li>
-      
-        <li class="covered" data-hits="15" data-linenumber="32">
-          <span class="hits">15</span>
-          
-          <code class="ruby">      @md_pages.each do |file|</code>
-        </li>
-      
-        <li class="covered" data-hits="15" data-linenumber="33">
-          <span class="hits">15</span>
-          
-          <code class="ruby">        convert_html(file, folder)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def get_md_file_names(folder)</code>
-        </li>
-      
-        <li class="covered" data-hits="15" data-linenumber="39">
-          <span class="hits">15</span>
-          
-          <code class="ruby">    @md_pages = Dir.entries(&quot;#{@home}/_output/#{folder}&quot;).find_all do |filename|</code>
-        </li>
-      
-        <li class="covered" data-hits="65" data-linenumber="40">
-          <span class="hits">65</span>
-          
-          <code class="ruby">      filename.split(&quot;.&quot;)[-1] == &quot;md&quot;  || filename.split(&quot;.&quot;)[-1] == &quot;markdown&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def convert_html(file, folder)</code>
-        </li>
-      
-        <li class="covered" data-hits="15" data-linenumber="45">
-          <span class="hits">15</span>
-          
-          <code class="ruby">    pages_md = File.read(&quot;#{@home}/_output/#{folder}/#{file}&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="15" data-linenumber="46">
-          <span class="hits">15</span>
-          
-          <code class="ruby">    html_content = Kramdown::Document.new(pages_md, :auto_ids =&gt; false).to_html</code>
-        </li>
-      
-        <li class="covered" data-hits="15" data-linenumber="47">
-          <span class="hits">15</span>
-          
-          <code class="ruby">    erb_template = File.read(&quot;#{@home}/source/layouts/default.html.erb&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="15" data-linenumber="48">
-          <span class="hits">15</span>
-          
-          <code class="ruby">    erb_formatted = ERB.new(erb_template).result(binding)</code>
-        </li>
-      
-        <li class="covered" data-hits="15" data-linenumber="49">
-          <span class="hits">15</span>
-          
-          <code class="ruby">    File.write(&quot;#{@home}/_output/#{folder}/#{file}&quot;, erb_formatted)</code>
-        </li>
-      
-        <li class="covered" data-hits="15" data-linenumber="50">
-          <span class="hits">15</span>
-          
-          <code class="ruby">    File.rename(&quot;#{@home}/_output/#{folder}/#{file}&quot;, &quot;#{@home}/_output/#{folder}/#{file.split(&quot;.&quot;)[0]}.html&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="53">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">end</code>
+          <code class="ruby">require &#39;./lib/error_check&#39;</code>
         </li>
       
     </ol>
@@ -491,8 +363,8 @@
     <h3>lib/structure.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>25</b> relevant lines. 
-      <span class="green"><b>25</b> lines covered</span> and
+      <b>22</b> relevant lines. 
+      <span class="green"><b>22</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -506,211 +378,193 @@
           <code class="ruby">require &#39;./lib/lib_header&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;pry&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="never" data-hits="" data-linenumber="2">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
           <code class="ruby">class Structure</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  attr_accessor :path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
           <code class="ruby">  def initialize(path)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="8">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
           
           <code class="ruby">    create_outer_structure(path)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="9">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
           
           <code class="ruby">    create_inner_structure</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="10">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
           <code class="ruby">    create_writeable_files</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  def create_outer_structure(path)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="14">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
           
-          <code class="ruby">    path = &quot;/#{path}&quot; if path[0] != &quot;/&quot;</code>
+          <code class="ruby">    @home = ErrorCheck.new_path_check(path)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="15">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="13">
+          <span class="hits">2</span>
           
-          <code class="ruby">    path.split(&quot;/&quot;)[1] == &quot;Users&quot; ? @home = path : @home = __dir__ + path</code>
+          <code class="ruby">    raise ArgumentError.new(&quot;PATH ALREADY EXISTS!&quot;) if File.directory?(@home)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="16">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    raise ArgumentError.new(&quot;THE FILEPATH ALREADY EXISTS!&quot;) if File.directory?(@home)</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="17">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="14">
+          <span class="hits">2</span>
           
           <code class="ruby">    FileUtils::mkdir_p @home</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">  def create_inner_structure</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="21">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="18">
+          <span class="hits">2</span>
           
           <code class="ruby">    FileUtils::mkdir_p @home + &#39;/source/css&#39;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="22">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="19">
+          <span class="hits">2</span>
           
           <code class="ruby">    FileUtils::mkdir_p @home + &#39;/source/pages&#39;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="23">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
           
           <code class="ruby">    FileUtils::mkdir_p @home + &#39;/source/layouts&#39;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="24">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="21">
+          <span class="hits">2</span>
           
           <code class="ruby">    FileUtils::mkdir_p @home + &#39;/source/posts&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
           <code class="ruby">  def create_writeable_files</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="28">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="25">
+          <span class="hits">2</span>
           
           <code class="ruby">    date = Date.today.strftime(&quot;%Y-%m-%d&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="29">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="26">
+          <span class="hits">2</span>
           
           <code class="ruby">    File.write(@home + &#39;/source/css/main.css&#39;, File.read(&#39;./lib/txt/maincss.txt&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="30">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="27">
+          <span class="hits">2</span>
           
           <code class="ruby">    File.write(@home + &#39;/source/pages/about.md&#39;, File.read(&#39;./lib/txt/about.txt&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="31">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="28">
+          <span class="hits">2</span>
           
           <code class="ruby">    File.write(@home + &#39;/source/layouts/default.html.erb&#39;, File.read(&#39;./lib/txt/erb.txt&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="32">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="29">
+          <span class="hits">2</span>
           
           <code class="ruby">    File.write(@home + &#39;/source/index.md&#39;, File.read(&#39;./lib/txt/index.txt&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="33">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="30">
+          <span class="hits">2</span>
           
           <code class="ruby">    File.write(@home + &#39;/source/posts/&#39; + date + &#39;-welcome-to-hyde.md&#39;, File.read(&#39;./lib/txt/welcome.txt&#39;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">end</code>
