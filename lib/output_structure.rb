@@ -1,5 +1,6 @@
 require './lib/structure'
 require './lib/lib_header'
+require 'pry'
 
 class OutputStructure
   attr_accessor :path
@@ -20,12 +21,21 @@ class OutputStructure
   end
 
   def file_conversion_magic
-    folders = ["pages", "posts", "."]
-    folders.each do |folder|
-      get_md_file_names(folder)
-      @md_pages.each do |file|
-        convert_html(file, folder)
-      end
+    @folders = Dir.glob("#{@home}/source/**/*").select do |file|
+      file if file.include?("md") || file.include?("markdown") || !file.include?("source")
+    end
+    convert_html
+  end
+
+  def convert_html
+    @folders.each do |file|
+      current_file = File.read(file)
+      html_content = Kramdown::Document.new(current_file, :auto_ids => false).to_html
+      erb_template = File.read("#{@home}/source/layouts/default.html.erb")
+      erb_formatted = ERB.new(erb_template).result(binding)
+      file.sub!("source", "_output")
+        File.write("#{file}", erb_formatted)
+      File.rename("#{file}", "#{file.split(".")[0]}.html")
     end
   end
 
@@ -34,16 +44,4 @@ class OutputStructure
       filename.split(".")[-1] == "md"  || filename.split(".")[-1] == "markdown"
     end
   end
-
-  def convert_html(file, folder)
-    pages_md = File.read("#{@home}/_output/#{folder}/#{file}")
-    html_content = Kramdown::Document.new(pages_md, :auto_ids => false).to_html
-    erb_template = File.read("#{@home}/source/layouts/default.html.erb")
-    erb_formatted = ERB.new(erb_template).result(binding)
-    File.write("#{@home}/_output/#{folder}/#{file}", erb_formatted)
-    File.rename("#{@home}/_output/#{folder}/#{file}", "#{@home}/_output/#{folder}/#{file.split(".")[0]}.html")
-  end
-
-
-
 end
