@@ -1,7 +1,7 @@
 require './lib/lib_header'
+require './lib/error_check'
 
 class Structure
-
   def initialize(path)
     create_outer_structure(path)
     create_inner_structure
@@ -29,5 +29,4 @@ class Structure
     File.write(@home + '/source/index.md', File.read('./lib/txt/index.txt'))
     File.write(@home + '/source/posts/' + date + '-welcome-to-hyde.md', File.read('./lib/txt/welcome.txt'))
   end
-
 end
