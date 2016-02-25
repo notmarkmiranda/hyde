@@ -17,7 +17,7 @@ class OutputStructure
 
   def convert_md
     index_md = File.read(@home + '/_output/index.md')
-    html_content = Kramdown::Document.new(index_md).to_html
+    html_content = Kramdown::Document.new(index_md, :auto_ids => false).to_html
     erb_template = File.read(@home + '/source/layouts/default.html.erb')
     erb_formatted = ERB.new(erb_template).result(binding)
     File.write(@home + '/_output/index.md', erb_formatted)
@@ -34,7 +34,7 @@ class OutputStructure
       end
       md_pages.each do |file|
         pages_md = File.read("#{@home}/_output/#{folder}/#{file}")
-        html_content = Kramdown::Document.new(pages_md).to_html
+        html_content = Kramdown::Document.new(pages_md, :auto_ids => false).to_html
         erb_template = File.read("#{@home}/source/layouts/default.html.erb")
         erb_formatted = ERB.new(erb_template).result(binding)
         File.write("#{@home}/_output/#{folder}/#{file}", erb_formatted)

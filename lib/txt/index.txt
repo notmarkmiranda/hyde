@@ -1,0 +1,7 @@
+# Welcome to you brand-spankin' new Hyde Blog!
+## Here are all the reasons it\'s awesome:
+
+* Because Mark & Claudia built it with their bare hands!
+* Super great.
+
+{:.class_name} We hope you enjoy it! .
