@@ -1,5 +1,4 @@
-require 'date'
-require 'fileutils'
+require './lib/lib_header'
 require 'pry'
 
 class Structure
