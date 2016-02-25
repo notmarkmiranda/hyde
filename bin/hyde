@@ -14,10 +14,3 @@ when "post"
   raise ArgumentError.new("PATH DOES NOT EXIST!") if File.directory?(args[1])
   BlogPost.new(args[1], args[2..-1])
 end
-#create skeleton
-
-
-
-# ##############
-# Your code here
-# ##############

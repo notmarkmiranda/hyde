@@ -29,9 +29,11 @@ class Structure
     placeholder_text = "This is placeholder text."
     placeholder_markdown = "# Some Markdown\n\n* a list\n* another item"
     date = Date.today.strftime("%Y-%m-%d")
-    File.write(@home + '/source/css/main.css', placeholder_text)
+    erb_file = File.read('./lib/erb.txt')
+    css_file = File.read('./lib/maincss.txt')
+    File.write(@home + '/source/css/main.css', css_file)
     File.write(@home + '/source/pages/about.md', placeholder_markdown)
-    File.write(@home + '/source/layouts/default.html.erb', placeholder_markdown)
+    File.write(@home + '/source/layouts/default.html.erb', erb_file)
     File.write(@home + '/source/index.md', placeholder_markdown)
     File.write(@home + '/source/posts/' + date + '-welcome-to-hyde.md', placeholder_markdown)
   end
