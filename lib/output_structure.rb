@@ -5,7 +5,7 @@ class OutputStructure
   attr_accessor :path
 
   def initialize(path)
-    @home  = ErrorCheck.path_check(path)
+    @home = ErrorCheck.path_check(path)
     raise ArgumentError.new("PATH DOES NOT EXIST!") if !File.directory?(@home)
     copy_files
     convert_md
@@ -16,10 +16,6 @@ class OutputStructure
   end
 
   def convert_md
-    file_conversion_magic
-  end
-
-  def file_conversion_magic
     @folders = Dir.glob("#{@home}/source/**/*").select do |file|
       file if file.include?("md" || "markdown") || !file.include?("source")
     end

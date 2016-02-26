@@ -7,10 +7,8 @@ class WatchChangesTest < Minitest::Test
   #   Structure.new('/HydeTestOne')
   #   OutputStructure.new('/HydeTestOne')
   #   listener = Listen.to('./lib/HydeTestOne/source') do |modified, added, removed|
-  #     @modified = modified
-  #     @added = added
-  #       puts "modified absolute path: #{@modified}"
-  #       puts "added absolute path: #{@added}"
+  #       puts "modified absolute path: #{modified}"
+  #       puts "added absolute path: #{added}"
   #       puts "removed absolute path: #{removed}"
   #   end
   #   listener.start

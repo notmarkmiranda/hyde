@@ -9,7 +9,7 @@ class Structure
   end
 
   def create_outer_structure(path)
-    @home = ErrorCheck.new_path_check(path)
+    @home = ErrorCheck.path_check(path)
     raise ArgumentError.new("PATH ALREADY EXISTS!") if File.directory?(@home)
     FileUtils::mkdir_p @home
   end
