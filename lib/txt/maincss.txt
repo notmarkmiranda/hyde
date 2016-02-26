@@ -9,11 +9,14 @@ h1 {
 
 h2 {
   font-size: 18px;
-  color: gray;
+  color: red;
+}
+em {font-weight: bold;
+  color: black;
 }
 
 li {
-  color: blue;
+  color: white;
 }
 
 p {
